@@ -8,11 +8,10 @@ export class createOrphanages1602602413069 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'integer',
-            unsigned: true,
+            type: 'uuid',
             isPrimary: true,
-            isGenerated: true,
-            generationStrategy: 'increment',
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'name',
@@ -21,14 +20,13 @@ export class createOrphanages1602602413069 implements MigrationInterface {
           {
             name: 'latitude',
             type: 'decimal',
-            scale: 10,
-            precision: 2,
+            precision: 10,
+            scale: 2,
           },
           {
             name: 'longitude',
             type: 'decimal',
-            scale: 10,
-            precision: 2,
+            precision: 10,
           },
           {
             name: 'about',
